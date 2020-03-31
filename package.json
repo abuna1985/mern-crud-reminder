@@ -1,0 +1,11 @@
+{
+  "name": "mern-crud-reminder",
+  "version": "1.0.0",
+  "description": "A MERN CRUD that allows users to log in and set reminders that will be sent via text or email",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Abundis",
+  "license": "ISC"
+}
