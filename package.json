@@ -1,8 +1,9 @@
 {
-  "name": "mern-crud-reminder",
+  "name": "api-design-v3",
   "version": "1.0.0",
-  "description": "A MERN CRUD that allows users to log in and set reminders that will be sent via text or email",
   "main": "index.js",
+  "author": "Scott Moss <willscottmoss@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
@@ -14,8 +15,6 @@
     "restart": "rimraf dist && yarn build && yarn start",
     "start": "node dist/index.js"
   },
-  "author": "Adam Abundis",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
@@ -24,8 +23,8 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "lodash": "^4.17.12",
-    "mongoose": "^5.7.5",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.3.13",
     "morgan": "^1.9.1",
     "validator": "^10.9.0"
   },

@@ -1,21 +1,18 @@
 module.exports = {
+  parserOptions: {
+    sourceType: 'module'
+  },
+  parser: 'babel-eslint',
   env: {
-    node: true,
+    node: true
   },
   extends: [
     'standard',
     'prettier',
     'prettier/standard',
-    'plugin:jest/recommended',
+    'plugin:jest/recommended'
   ],
-  parserOptions: {
-    sourceType: 'module',
-  },
-  parser: 'babel-eslint',
-  plugins: [
-    'prettier', 
-    'jest'
-  ],
+  plugins: ['prettier', 'jest'],
   rules: {
     'promise/catch-or-return': 'error',
     'prettier/prettier': [
@@ -25,5 +22,5 @@ module.exports = {
         'semi': false
       }
     ]
-  },
-};
+  }
+}
