@@ -1,9 +1,10 @@
 import mongoose from 'mongoose'
 import cuid from 'cuid'
 import _ from 'lodash'
+import { Reminder } from './src/resources/reminder/reminder.model'
 import { User } from './src/resources/user/user.model'
 
-const models = { User }
+const models = { User, Reminder }
 
 const url =
   process.env.MONGODB_URI ||
