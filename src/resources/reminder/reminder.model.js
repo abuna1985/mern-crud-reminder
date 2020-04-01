@@ -2,11 +2,12 @@ import mongoose from 'mongoose'
 
 const reminderSchema = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
       trim: true,
-      maxlength: 50
+      min: 3,
+      max: 50
     },
     status: {
       type: String,
@@ -14,16 +15,16 @@ const reminderSchema = new mongoose.Schema(
       enum: ['active', 'complete', 'pastdue'],
       default: 'active'
     },
-    notes: String,
+    content: {
+      type: {},
+      required: true,
+      min: 2,
+      max: 2000
+    },
     due: Date,
     createdBy: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'user',
-      required: true
-    },
-    list: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: 'list',
       required: true
     }
   },

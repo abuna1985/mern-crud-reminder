@@ -3,13 +3,14 @@ import mongoose from 'mongoose'
 
 describe('Reminder model', () => {
   describe('schema', () => {
-    test('name', () => {
-      const name = Reminder.schema.obj.name
-      expect(name).toEqual({
+    test('title', () => {
+      const title = Reminder.schema.obj.title
+      expect(title).toEqual({
         type: String,
         required: true,
         trim: true,
-        maxlength: 50
+        min: 3,
+        max: 50
       })
     })
 
@@ -23,9 +24,14 @@ describe('Reminder model', () => {
       })
     })
 
-    test('notes', () => {
-      const notes = Reminder.schema.obj.notes
-      expect(notes).toEqual(String)
+    test('content', () => {
+      const content = Reminder.schema.obj.content
+      expect(content).toEqual({
+        type: {},
+        required: true,
+        min: 2,
+        max: 2000
+      })
     })
 
     test('due', () => {
