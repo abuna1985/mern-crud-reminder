@@ -36,7 +36,10 @@ describe('Reminder model', () => {
 
     test('due', () => {
       const due = Reminder.schema.obj.due
-      expect(due).toEqual(Date)
+      expect(due).toEqual({
+        type: Date,
+        index: true
+      })
     })
 
     test('createdBy', () => {
