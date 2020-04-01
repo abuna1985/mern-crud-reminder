@@ -1,3 +1,4 @@
+// Get one from the model collection
 export const getOne = model => async (req, res) => {
   try {
     const doc = await model
@@ -16,6 +17,7 @@ export const getOne = model => async (req, res) => {
   }
 }
 
+// get all reminders with the user id within the request
 export const getMany = model => async (req, res) => {
   try {
     const docs = await model
@@ -30,6 +32,21 @@ export const getMany = model => async (req, res) => {
   }
 }
 
+export const getAll = model => async (req, res) => {
+  try {
+    const docs = await model
+      .find({})
+      .lean()
+      .exec()
+
+    res.status(200).json({ data: docs })
+  } catch (e) {
+    console.error(e)
+    res.status(400).end()
+  }
+}
+
+// get the user id and add to the reminder, then add to the collection
 export const createOne = model => async (req, res) => {
   const createdBy = req.user._id
   try {
@@ -41,6 +58,7 @@ export const createOne = model => async (req, res) => {
   }
 }
 
+// find the reminder by user and id, then update the reminder
 export const updateOne = model => async (req, res) => {
   try {
     const updatedDoc = await model
@@ -66,6 +84,7 @@ export const updateOne = model => async (req, res) => {
   }
 }
 
+// find reminder by user id and reminder id, then delete
 export const removeOne = model => async (req, res) => {
   try {
     const removed = await model.findOneAndRemove({
@@ -84,6 +103,7 @@ export const removeOne = model => async (req, res) => {
   }
 }
 
+// Add crud functionality to one Controller object
 export const crudControllers = model => ({
   removeOne: removeOne(model),
   updateOne: updateOne(model),
