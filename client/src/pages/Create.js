@@ -23,18 +23,18 @@ const Create = (props) => {
     // console.table({title, content, date, status})
     // POST request using fetch with error handling
     // console.table({ title, content, user });
-    const date = new Date(due).toISOString
+    let date = new Date(due).toISOString
     const config = {
-        headers: { authorization: `Bearer ${getToken()}` }
+        headers: { Authorization: `Bearer ${getToken()}` }
     }
     axios
-      .post('api/reminder', { title, content, date, status }, config)
+      .post('api/reminder', { title, content, due: date, status }, config)
       .then(response => {
         console.log(response);
         // empty state
         setState({ ...state, title: '', content: '', due: '', status: 'active' });
         // show sucess alert
-        alert(`Post titled ${response.data.title} is created`);
+        alert(`Post titled ${response.data.doc.title} is created`);
       })
       .catch(error => {
         console.log(error.response);
