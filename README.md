@@ -6,7 +6,7 @@ A full-stack application that runs a front-end and back-end server
 [X] Allow users to sign up/sign in to the application using username or email
 [ ] Allow users to add/edit reminders when they sign in to the application
 [ ] Notify the users about their reminders via text or email when their reminders are due
-[ ] Have different routes for each functionality: sign up /sign in /sign out /add reminders
+[X] Have different routes for each functionality: sign up /sign in /sign out /add reminders
 
 ## Installing
 
@@ -69,7 +69,3 @@ npm run test-models (yarn test -t model)
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Setbacks
-
-* CORS issues with fetch within React (localhost)
-* Getting the Front-End to communicate with the server
