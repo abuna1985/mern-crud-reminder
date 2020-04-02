@@ -45,7 +45,7 @@ export const signin = async (req, res) => {
     const match = await user.checkPassword(req.body.password)
     if (!match) return res.status(401).send({ message: 'Not Authorized' })
     const token = newToken(user)
-    return res.status(201).send({ token })
+    return res.status(201).send({ token, name: req.body.email })
   } catch(e) {
     console.error(e)
     return res.status(401).end({ message: 'Not Authorized' })
