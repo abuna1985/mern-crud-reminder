@@ -4,10 +4,15 @@ A full-stack application that runs a front-end and back-end server
 
 ## Requirements
 [X] Allow users to sign up to the application using username or email
+
 [X] Allow users to sign in to the application using username or email
+
 [X] Allow users to add reminders when they sign in to the application
+
 [ ] Allow users to edit reminders when they sign in to the application (API available/component coming soon)
+
 [ ] Notify the users about their reminders via text or email when their reminders are due (coming soon)
+
 [X] Have different routes for each functionality: sign up /sign in /sign out /add reminders
 
 ## Background
