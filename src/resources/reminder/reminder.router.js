@@ -6,7 +6,7 @@ const router = Router()
 // /api/reminder
 router
   .route('/')
-  .get(controllers.getOne)
+  .get(controllers.getMany)
   .post(controllers.createOne)
 
 // /api/reminder/:id
