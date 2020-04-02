@@ -2,8 +2,13 @@
 
 A full-stack application that runs a front-end and back-end server
 
+## Requirements
+[X] Allow users to sign up/sign in to the application using username or email
+[ ] Allow users to add/edit reminders when they sign in to the application
+[ ] Notify the users about their reminders via text or email when their reminders are due
+[ ] Have different routes for each functionality: sign up /sign in /sign out /add reminders
 
-### Installing
+## Installing
 
 Here are the steps to get you up and running on the dev environment
 
