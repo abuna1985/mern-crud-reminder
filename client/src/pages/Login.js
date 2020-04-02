@@ -45,8 +45,8 @@ const Login = props => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label className="text-muted">Username(email)</label>
-          <input onChange={handleChange('email')} type="text" value={email} className="form-control" placeholder="Reminder title" required />
+          <label className="text-muted">Email</label>
+          <input onChange={handleChange('email')} type="text" value={email} className="form-control" placeholder="Email" required />
         </div>
         <div className="form-group">
           <label className="text-muted">Password</label>
