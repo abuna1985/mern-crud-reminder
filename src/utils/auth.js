@@ -24,7 +24,7 @@ export const signup = async (req, res) => {
     const user = await User.create(req.body)
     const token = newToken(user)
 
-    return res.status(201).send({ token })
+    return res.status(201).send({ token, name: req.body.email })
   } catch(e) {
     console.error(e)
     return res.status(400).end()
