@@ -21,8 +21,7 @@ const Create = (props) => {
   const handleSubmit = event => {
     event.preventDefault()
     // console.table({title, content, date, status})
-    // POST request using fetch with error handling
-    // console.table({ title, content, user });
+    // convert date to ISO format, add the Authoization header, then post to the /reminder API and confirm successful addition
     let date = new Date(due).toISOString
     const config = {
         headers: { Authorization: `Bearer ${getToken()}` }
@@ -30,18 +29,19 @@ const Create = (props) => {
     axios
       .post('api/reminder', { title, content, due: date, status }, config)
       .then(response => {
-        console.log(response);
+        //console.log(response)
         // empty state
-        setState({ ...state, title: '', content: '', due: '', status: 'active' });
+        setState({ ...state, title: '', content: '', due: '', status: 'active' })
         // show sucess alert
-        alert(`Post titled ${response.data.doc.title} is created`);
+        alert(`Post titled ${response.data.doc.title} is created`)
       })
       .catch(error => {
-        console.log(error.response);
-        alert(error.response.data.error);
+        console.log(error.response)
+        alert(error.response.data.error)
       }) 
     
   }
+
   return (
     <div className="container p-5">
       <h1>CREATE REMINDER</h1>

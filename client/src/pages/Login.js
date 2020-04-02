@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
-import { authenticate, getUser } from '../utils/helper';
+import { authenticate, getUser } from '../utils/helper'
 
 
 const Login = props => {
@@ -14,9 +14,9 @@ const Login = props => {
   const {email, password} = state
 
   useEffect(() => {
-    getUser() && props.history.push('/');
+    getUser() && props.history.push('/')
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   // onChange event handler
   const handleChange = name => event => {
@@ -26,18 +26,19 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    // Send the email and password in the text box to the API and store the token and username in session storage if successful
     axios
       .post('/signin', { email, password })
       .then(response => {
-        console.log(response);
+        //console.log(response)
         // response will contain token and name
-        authenticate(response, () => props.history.push('/create'));
+        authenticate(response, () => props.history.push('/create'))
         // redirect to create page
       })
       .catch(error => {
-          console.table(error);
-          alert(error.response);
-      });
+          console.table(error)
+          alert(error.response)
+      })
   }
 
    return (

@@ -1,8 +1,7 @@
 import React, {useState } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
-import { authenticate } from '../utils/helper';
-
+import { authenticate } from '../utils/helper'
 
 const Register = props => {
   // initialize the state
@@ -25,15 +24,15 @@ const Register = props => {
     axios
       .post('/signup', { email, password, phone })
       .then(response => {
-        console.log(response);
+        //console.log(response)
         // response will contain token and name
-        authenticate(response, () => props.history.push('/create'));
+        authenticate(response, () => props.history.push('/create'))
         // redirect to create page
       })
       .catch(error => {
-          console.table(error);
-          alert(error.response);
-      });
+          console.table(error)
+          alert(error.response)
+      })
   }
 
    return (

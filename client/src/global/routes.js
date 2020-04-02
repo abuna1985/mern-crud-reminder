@@ -17,6 +17,6 @@ const Routes = () => (
       <Route path="/login" exact component={Login} />
     </Switch>
   </BrowserRouter>
-);
+)
 
-export default Routes;
+export default Routes
