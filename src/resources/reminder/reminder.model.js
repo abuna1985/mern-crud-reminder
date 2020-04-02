@@ -31,6 +31,4 @@ const reminderSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-reminderSchema.index({ list: 1, name: 1 }, { unique: true })
-
 export const Reminder = mongoose.model('reminder', reminderSchema)
